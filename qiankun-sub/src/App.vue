@@ -1,0 +1,47 @@
+<template>
+  <div class="app">
+    <div v-if="!qik" class="nav">
+      <router-link to="/qiankun-sub">
+        Home
+      </router-link>
+    </div>
+    <router-view />
+  </div>
+</template>
+
+<script>
+const qik = window.__POWERED_BY_QIANKUN__ || false
+export default {
+  name: 'App',
+  components: {
+  },
+  data() {
+    return {
+      qik
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
